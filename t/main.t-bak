@@ -1,0 +1,20 @@
+use lib 'lib';                       # 添加我们的库路劲 lib，上面的 lib 文件夹
+use Test::Demo::BaseLib 'no_plan';  # 选择 no_plan 表示没有测试计划
+
+run_test();                          # 执行程序自定义的入口函数
+
+__DATA__
+
+=== TEST 1: test1
+
+--- code
+local x = 1   --set x = 1
+--- verify
+local x = 1   -- set x = 1
+
+=== TEST 2: test2
+
+--- code
+local x=1   -- set x = 1
+--- verify
+local x = 1   -- set x = 1
